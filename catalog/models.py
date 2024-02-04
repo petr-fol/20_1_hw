@@ -33,6 +33,7 @@ class Product(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='имя')
     description = models.TextField(verbose_name='описание')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='создано')
 
     class Meta:
         verbose_name = 'категория'
