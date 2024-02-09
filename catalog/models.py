@@ -29,12 +29,32 @@ class Product(models.Model):
         verbose_name = 'товар'
         verbose_name_plural = 'товары'
 
+    def __str__(self):
+        return self.name
+
 
 class Category(models.Model):
+
+    # created_at = models.DateTimeField(auto_now_add=True, verbose_name='создано')
     name = models.CharField(max_length=100, verbose_name='имя')
     description = models.TextField(verbose_name='описание')
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='создано')
 
     class Meta:
         verbose_name = 'категория'
         verbose_name_plural = 'категории'
+
+    def __str__(self):
+        return self.name
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100, verbose_name='имя')
+    email = models.EmailField(verbose_name='email')
+    message = models.TextField(verbose_name='сообщение')
+
+    class Meta:
+        verbose_name = 'контакты'
+        verbose_name_plural = 'контакты'
+
+    def __str__(self):
+        return self.name
